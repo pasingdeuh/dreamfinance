@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dream Finance</title>
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/static/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/static/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/static/images/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<link href="https://fonts.cdnfonts.com/css/myna" rel="stylesheet">
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="/static/css/styles.css"/>
+<link rel="stylesheet" type="text/css" id="applicationStylesheet" href="/static/css/responsive.css"/>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="/static/admin/iziToast/dist/css/iziToast.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" integrity="sha512-rRQtF4V2wtAvXsou4iUAs2kXHi3Lj9NE7xJR77DE7GHsxgY9RTWy93dzMXgDIG8ToiRTD45VsDNdTiUagOFeZA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/static/admin/iziToast/dist/js/iziToast.min.js"></script>
+<script type="text/javascript" src="/static/scripts/application.js"></script></head>
+<body>
+
+<div class="slowdLoading">
+    
+<div class="page-nav-wrapper">
+    <div class="page-container">
+        <div class="nav-bar">
+
+            <div class="navbar-logo">
+                <img src="/static/images/logos.png">
+            </div>
+
+            <div class="navbar-menu">
+                <ul>
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="about">About Us</a>
+                    </li>
+                    <li>
+                        <a href="services">Services</a>
+                    </li>
+                    <li>
+                        <a href="contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="news">News & Events</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="navbar-right-buttons">
+                <div class="button-div">
+                    <a href="./login">LOGIN</a>
+                    <span class="zmdi zmdi-menu mobileMenu"></span>
+                </div>
+                <div class="button-div">
+                    <button onclick="redirect('http://localhost:8000/login')">
+                        SIGN UP
+                    </button>
+                </div>
+
+                <div class="button-div search">
+                    <span class="fa fa-search"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="menu-spacing"></div>
+
+<div class="mobile-menu">
+    <div class="mobile-menu-header">
+        <div class="mobile-menu-logo">
+            <img src="/static/images/logo.png">
+        </div>
+        <div class="mobile-menu-close">
+            <span class="fa fa-close closeMobileMenu"></span>
+        </div>
+    </div>
+
+    <div class="mobile-menu-body">
+        <ul>
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="about">About Us</a>
+            </li>
+            <li>
+                <a href="services">Services</a>
+            </li>
+            <li>
+                <a href="contact">Contact</a>
+            </li>
+            <li>
+                <a href="news">News & Events</a>
+            </li>
+            <li>
+                <a href="https://app.dreamfinance.co.mw/login">LOGIN</a>
+            </li>
+            <li>
+                <a href="https://app.dreamfinance.co.mw/register">SIGN UP</a>
+            </li>
+        </ul>
+    </div>
+    <div class="mobile-menu-footer">
+        <a href="#">By Cool Enterprises Limited</a>
+    </div>
+    <div class="inner-wrapper-menu">
+
+    </div>
+</div>
+
+<div class="full-page-wrapper">
+
+</div>
+
+<div class="search-engine-container">
+    <div class="search-engine-input">
+        <div>
+            <input placeholder="Search Article" class="search-article">
+        </div>
+        <div>
+            <button class="btn search-article-btn">
+                <span class="fa fa-search"></span> Search Article
+            </button>
+            <button class="btn closeSearch">
+                <span class="fa fa-times-circle"></span> Close
+            </button>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    $(function () {
+        $('.search-article-btn').click(function () {
+            let keyword = $('.search-article').val();
+            if (keyword){
+                redirect('search/'+keyword);
+            }
+        });
+    });
+</script>
+<!--<div class="preloader">-->
+<!--    <div>-->
+<!--        <img src="/static/images/Dream_finance_logo_jw.png">-->
+<!--    </div>-->
+<!--    <div>-->
+<!--        <img src="/static/images/supportingimages/spinner.gif">-->
+<!--    </div>-->
+<!--</div>-->
+<div class="page-full-container">
+
+    <div class="landing-section">
+        <div class="landing-image-section">
+            <img src="/static/images/AdobeStock_292953404-scaled.png">
+
+            <div class="landing-page-info-mobile">
+
+                <div class="landing-page-row">
+                    <div class="landing-page-tags">
+                        Finance
+                    </div>
+                    <div class="landing-page-tags">
+                        Planning
+                    </div>
+                    <div class="landing-page-tags">
+                        Growth
+                    </div>
+                </div>
+
+                <div class="landing-page-row">
+                    We believe
+                    <span>small</span>
+                    business
+                    matter too
+                </div>
+
+                <div class="landing-page-row">
+                    We aim at providing entrepreneurs with unique,
+                    people oriented, technology driven,
+                    value added products and services.
+                </div>
+                <div class="landing-page-row">
+                    <div>
+                        <a href="./services">
+                            <button class="btn">
+                                GET A LOAN NOW <span class="fa fa-angle-right"></span>
+                            </button>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="./about">
+                            <button class="btn">
+                                LEARN MORE <span class="fa fa-angle-right"></span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="landing-text-section">
+
+            <div class="landing-page-info">
+
+                <div class="landing-page-row">
+                    <div class="landing-page-tags">
+                        Finance
+                    </div>
+                    <div class="landing-page-tags">
+                        Planning
+                    </div>
+                    <div class="landing-page-tags">
+                        Growth
+                    </div>
+                </div>
+
+                <div class="landing-page-row">
+                    We believe
+                    <span>small</span>
+                    business
+                    matter too
+                </div>
+
+                <div class="landing-page-row">
+                    We aim at providing entrepreneurs with unique,
+                    people oriented, technology driven,
+                    value added products and services delivered by a well-trained
+                    and motivated workforce in a sustainable and profitable
+                    manner for the economic benefit of our stakeholders.
+                </div>
+                <div class="landing-page-row">
+                    <div>
+                        <a href="http://loanmanager.dreamfinance.co.mw/">
+                            <button class="btn">
+                                GET A LOAN NOW <span class="fa fa-angle-right"></span>
+                            </button>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a href="./services">
+                            <button class="btn">
+                                LEARN MORE <span class="fa fa-angle-right"></span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-section">
+    <div class="page-container">
+        <div class="page-section-row">
+
+            <div class="page-section-info">
+                <div class="information-body">
+                    <p>
+                        Dream Financial Services Limited Company is a new Micro Finance Institution.
+                        It offers a broad range of financial services to micro, small and medium-sized enterprises, and
+                        various low-income earners as individuals, businesses, and groups like cooperatives.
+                    </p>
+                    <p>
+                        Dream Financial Services Limited Company is fully committed to provide various saving deposits
+                        for all levels of customers. It is a limited liability company duly incorporated in Malawi under
+                        the 2017 Companies Act and is regulated by the Reserve Bank of Malawi
+                    </p>
+                </div>
+            </div>
+
+            <div class="page-section-info">
+                <div class="main-information-body">
+                    Dream Financial Services.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-section-row">
+
+            <div class="page-section-info2">
+                <div class="information-body2">
+                    <p>
+<!--                        Being a new and upcoming deposit taking Micro Finance Institution (MFI),-->
+<!--                        it promises a very strong financial backing from-->
+<!--                        its very ambitious shareholders and has been tasked with improving-->
+<!--                        access to financial services in the country-->
+                        To provide entrepreneurs with unique, people-oriented, technology-driven,
+                        value-added products and services delivered by a well-trained and motivated
+                        workforce in a sustainable and profitable manner for the economic benefit of our stakeholders.
+                    </p>
+                </div>
+            </div>
+
+            <div class="page-section-info2">
+                <div class="main-information-body2">
+                    Our Mission.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="page-section-row">
+
+            <div class="page-section-info">
+                <div class="information-body">
+                    <p>
+<!--                        We aim provide entrepreneurs with unique, people oriented, technology driven,-->
+<!--                        value added products and services delivered by a well-trained-->
+<!--                        and motivated workforce in a sustainable and profitable manner for-->
+<!--                        the economic benefit of our stakeholders.-->
+                        Encourage 
+                         among the un banked productive citizens of the country.
+                        To make credit facilities more accessible to micro-entrepreneurs engaged
+                        in real sector activities at an attractive interest rate and in a sustainable manner.
+                        Improve the business and financial skills of micro-entrepreneurs through capacity building and training.
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="page-section-info">
+                <div class="main-information-body">
+                    Our Objectives.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="page-section-header">
+    <div class="page-container">
+        <div class="section-header">
+            <div>
+                WE HAVE YOU COVERED.
+            </div>
+            <div>
+               SERVICES WE PROVIDE
+            </div>
+            <div>
+                <span></span>
+            </div>
+            <div>
+                We aim at providing entrepreneurs with unique, people oriented, technology driven, value added products
+                and services delivered by a well-trained and motivated workforce in a sustainable and profitable manner for
+                the economic benefit of our stakeholders.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-section-header">
+    <div class="page-container">
+        <div class="section-header" style="margin-top: -100px">
+
+            <div></div>
+            <div style="font-size: 1.5em">
+                SAVINGS PRODUCTS
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="savings-section">
+    <div class="page-container">
+                        <div class="savings-products-card"
+                     style="background-image: url('https://www.nerdwallet.com/assets/blog/wp-content/uploads/2020/09/GettyImages-502521786.jpg-savings-accounts-basics-2400x1440.jpg')">
+
+                    <div class="savings-products-content">
+                        <div class="savings-products-title">
+                            <div>
+                                SAVINGS ACCOUNT                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="savings-products-body">
+                            <div class="savings-body-title">
+                                PRODUCT TARGET
+                            </div>
+                            <div class="savings-body-content">
+                                For individuals who want to save eventualities/future use.                            </div>
+
+                            <div class="savings-body-title">
+                                PRODUCT FEATURES
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Minimum Balance MWK1,000.</li>
+                                                                                <li>Interest rate at 4% per annul. Subject to review</li>
+                                                                    </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                BENEFITS TO CUSTOMERS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Relatively low minimum balance.</li>
+                                                                                        <li>No monthly charges</li>
+                                                                            </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                ACCOUNT OPENING REQUIREMENTS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Account opening forms</li>
+                                                                                        <li>Kyc documentation as advised by the bank</li>
+                                                                            </ul>
+                            </div>
+                        </div>
+
+                        <div class="servings-products-footer-btn">
+                            <button class="btn" onclick="redirect('./signup')">
+                               CREATE ACCOUNT
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                            <div class="savings-products-card"
+                     style="background-image: url('https://25174313.fs1.hubspotusercontent-eu1.net/hubfs/25174313/assets_comparehero/how-bank-interest-rates-on-savings-account.jpg')">
+
+                    <div class="savings-products-content">
+                        <div class="savings-products-title">
+                            <div>
+                                SAVER PLUS ACCOUNT                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="savings-products-body">
+                            <div class="savings-body-title">
+                                PRODUCT TARGET
+                            </div>
+                            <div class="savings-body-content">
+                                Salaries or employed individuals or individuals who own a business.                            </div>
+
+                            <div class="savings-body-title">
+                                PRODUCT FEATURES
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Minimum Balance MWK3,000.</li>
+                                                                                <li>Interest rate at 5% per annul. Subject to review</li>
+                                                                    </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                BENEFITS TO CUSTOMERS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Relatively low minimum balance.</li>
+                                                                                        <li>Can be used as security for borrowing.</li>
+                                                                                        <li>No monthly charges</li>
+                                                                            </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                ACCOUNT OPENING REQUIREMENTS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Account opening forms</li>
+                                                                                        <li>Kyc documentation as advised by the bank</li>
+                                                                            </ul>
+                            </div>
+                        </div>
+
+                        <div class="servings-products-footer-btn">
+                            <button class="btn" onclick="redirect('./signup')">
+                               CREATE ACCOUNT
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                            <div class="savings-products-card"
+                     style="background-image: url('https://www.times.mw/wp-content/uploads/2018/02/kwacha.jpg')">
+
+                    <div class="savings-products-content">
+                        <div class="savings-products-title">
+                            <div>
+                                FIXED TERM DEPOSIT                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="savings-products-body">
+                            <div class="savings-body-title">
+                                PRODUCT TARGET
+                            </div>
+                            <div class="savings-body-content">
+                                For customers with excess funds who intend to commit to an investment for a fixed period of time.                            </div>
+
+                            <div class="savings-body-title">
+                                PRODUCT FEATURES
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Minimum Balance of MWK50,000.</li>
+                                                                                <li>Predetermined fixed period</li>
+                                                                                <li>Interest is paid on expiry of each contractual period.</li>
+                                                                    </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                BENEFITS TO CUSTOMERS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>No bank charges.</li>
+                                                                                        <li>Can be used as security for borrowing</li>
+                                                                                        <li>Relatively high interest rate</li>
+                                                                                        <li>Very low risk.</li>
+                                                                            </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                ACCOUNT OPENING REQUIREMENTS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Account opening forms</li>
+                                                                                        <li>Kyc documentation as advised by the bank</li>
+                                                                            </ul>
+                            </div>
+                        </div>
+
+                        <div class="servings-products-footer-btn">
+                            <button class="btn" onclick="redirect('./signup')">
+                               CREATE ACCOUNT
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                            <div class="savings-products-card"
+                     style="background-image: url('https://s28126.pcdn.co/blogs/ask-experian/wp-content/uploads/How-to-Prepare-for-Student-Loan-Payments-900x600.jpg')">
+
+                    <div class="savings-products-content">
+                        <div class="savings-products-title">
+                            <div>
+                                STUDENT ACCOUNT                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+
+                        <div class="savings-products-body">
+                            <div class="savings-body-title">
+                                PRODUCT TARGET
+                            </div>
+                            <div class="savings-body-content">
+                                For students aged least 18 years.                            </div>
+
+                            <div class="savings-body-title">
+                                PRODUCT FEATURES
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Minimum Balance of MWK1,000.</li>
+                                                                                <li>Interest is at 4% per annul. Subject to review</li>
+                                                                    </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                BENEFITS TO CUSTOMERS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>No service fees on personal accounts.</li>
+                                                                            </ul>
+                            </div>
+
+                            <div class="savings-body-title">
+                                ACCOUNT OPENING REQUIREMENTS
+                            </div>
+                            <div class="savings-body-content">
+                                <ul>
+                                                                                <li>Account opening forms</li>
+                                                                                        <li>Opened using student ids from a recognized institution of higher education</li>
+                                                                                        <li>Signature specimen/thumbprint</li>
+                                                                                        <li>Utility bills</li>
+                                                                                        <li>Reference letter from the school</li>
+                                                                            </ul>
+                            </div>
+                        </div>
+
+                        <div class="servings-products-footer-btn">
+                            <button class="btn" onclick="redirect('./signup')">
+                               CREATE ACCOUNT
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+</div>
+
+<div class="page-section-header twerkMobile">
+    <div class="page-container">
+        <div class="section-header">
+
+            <div></div>
+            <div style="font-size: 1.5em">
+                LOAN SERVICES
+            </div>
+            <div>We get you covered</div>
+        </div>
+    </div>
+</div>
+
+<div class="services-section">
+    <div class="page-container">
+                            <div class="services-page-card">
+
+                        <div class="services-page-div">
+                            <img src="/static/admin/images/Working Capital Loan.png">
+                        </div>
+
+                        <div class="services-page-div">
+                            <div>
+                                Working Capital Loan.                            </div>
+                            <div>
+                                A working capital loan is designed for micro-entrepreneurs and small business owners
+who desire to borrow for business purposes to enhance their businesses.                            </div>
+                                                            <div>
+                                    Loan Size                                </div>
+                                <div>
+                                    MK250,000 to MK5, 000,000                                </div>
+                                                            <div>
+                                    Interest Rate                                </div>
+                                <div>
+                                    4% Monthly (using the reducing balance method)                                </div>
+                                                            <div>
+                                    Requirements                                </div>
+                                <div>
+                                    Must be in business for at least 6 Months                                </div>
+                                                        <div>
+                                <a href='http://loanmanager.dreamfinance.co.mw/'
+                                   target="_blank">
+                                    <button class="btn">
+                                        GET LOAN NOW
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="services-page-card">
+
+                        <div class="services-page-div">
+                            <img src="/static/admin/images/Asset Finance Loan.png">
+                        </div>
+
+                        <div class="services-page-div">
+                            <div>
+                                Asset Finance Loan                            </div>
+                            <div>
+                                Asset finance is a credit product that gives you the opportunity to own that asset you
+have always longed for either for Business or for Personal use.                            </div>
+                                                            <div>
+                                    Asset Cost                                </div>
+                                <div>
+                                    Not exceeding MK35,000,000                                </div>
+                                                            <div>
+                                    Interest Rate                                </div>
+                                <div>
+                                    4% Monthly (reducing balance)                                </div>
+                                                            <div>
+                                    Maximum Repayment Period                                </div>
+                                <div>
+                                    36 months                                </div>
+                                                        <div>
+                                <a href='http://loanmanager.dreamfinance.co.mw/'
+                                   target="_blank">
+                                    <button class="btn">
+                                        GET LOAN NOW
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="services-page-card">
+
+                        <div class="services-page-div">
+                            <img src="/static/admin/images/Working .png">
+                        </div>
+
+                        <div class="services-page-div">
+                            <div>
+                                Consumer Loan/Pay Roll Loans                            </div>
+                            <div>
+                                This is designed for workers who want to use the facility for personal, family, or household purposes, or for consumable items like household appliances and payment of school fees.                            </div>
+                                                            <div>
+                                    Loan Size                                </div>
+                                <div>
+                                    MK250,000 - MK2,000,000                                </div>
+                                                            <div>
+                                    Loan Interest                                </div>
+                                <div>
+                                    4%                                </div>
+                                                            <div>
+                                    Requirements                                </div>
+                                <div>
+                                    Must be working in a reputable organization or company (Salary Earner)                                </div>
+                                                        <div>
+                                <a href='http://loanmanager.dreamfinance.co.mw/'
+                                   target="_blank">
+                                    <button class="btn">
+                                        GET LOAN NOW
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                                        <div class="services-page-card">
+
+                        <div class="services-page-div">
+                            <img src="/static/admin/images/Group Loans.png">
+                        </div>
+
+                        <div class="services-page-div">
+                            <div>
+                                Group Loans                            </div>
+                            <div>
+                                Group loans are designed for micro-entrepreneurs, market women, self-help groups, and
+associations that are active in the business.                            </div>
+                                                            <div>
+                                    Group Loan Amount                                </div>
+                                <div>
+                                    From MK 100,000 to MK 500,000                                </div>
+                                                            <div>
+                                    Group Member Exposure                                </div>
+                                <div>
+                                    Not more than 30% of the total group loan                                </div>
+                                                            <div>
+                                    Interest Rate                                </div>
+                                <div>
+                                    5% Monthly (reducing balance)                                </div>
+                                                        <div>
+                                <a href='http://loanmanager.dreamfinance.co.mw/'
+                                   target="_blank">
+                                    <button class="btn">
+                                        GET LOAN NOW
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                        </div>
+</div>
+
+<div class="why-choose-header">
+    <div class="page-container">
+        <div class="why-choose-us-row">
+            <button class="btn">
+                WHY CHOOSE US
+            </button>
+            <div class="why-choose-us-bar"></div>
+        </div>
+    </div>
+</div>
+
+<div class="why-choose-us-body">
+    <div class="page-container">
+        <div class="why-choose-us-body-row">
+
+            <div class="why-choose-us-sections">
+                <img src="/static/images/Mortgage-Loan-Officer-Basics-1.png">
+            </div>
+
+            <div class="why-choose-us-sections">
+                <div class="why-choose-us-card-row">
+
+                    <div class="why-choose-card">
+                        <div class="why-choose-us-icon">
+                            <img src="/static/images/ICON_WHITE.png">
+                        </div>
+                        <div class="why-choose-us-text">
+                            AFFORDABLE PRICES
+                        </div>
+                        <div class="why-choose-us-info">
+                            No service fee for all the savings accounts.
+                            You can access our facilities at minimum
+                            account opening balance of MK3,000
+                        </div>
+                    </div>
+
+                    <div class="why-choose-card">
+                        <div class="why-choose-us-icon">
+                            <img src="/static/images/1295034-200.png">
+                        </div>
+                        <div class="why-choose-us-text">
+                            FAIR INTEREST RATES
+                        </div>
+                        <div class="why-choose-us-info">
+                            Low-interest rate on all loans.
+                            Competitive interest rate on all the savings accounts and
+                            negotiable interest rate on fixed deposit.
+                            What you see is what you get.
+                        </div>
+                    </div>
+
+                    <div class="why-choose-card-line"></div>
+                </div>
+                <div class="why-choose-us-card-row">
+                    <div class="why-choose-card">
+                        <div class="why-choose-us-icon">
+                            <img src="/static/images/EXPERIENCE_ICON_WHITE.png">
+                        </div>
+                        <div class="why-choose-us-text">
+                            EASY EXPERIENCE
+                        </div>
+                        <div class="why-choose-us-info">
+                            Simple online application and access to live
+                            support 24/7.
+                        </div>
+                    </div>
+
+                    <div class="why-choose-card">
+                        <div class="why-choose-us-icon">
+                            <img src="/static/images/NO_FEES_NO_CATCH.png">
+                        </div>
+                        <div class="why-choose-us-text">
+                            NO FEE NO CATCH
+                        </div>
+                        <div class="why-choose-us-info">
+                            Free Bank Statement.
+                            What you see is what you get.
+                        </div>
+                    </div>
+
+                    <div class="why-choose-card-line"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+</body>
+
+<div class="page-instagram-wrapper">
+    <div class="page-section-header">
+        <div class="page-container">
+            <hr/>
+            <div class="section-header" style="padding-top: 10px !important;">
+                <div>
+                    FOLLOW US ON
+                </div>
+                <div>
+                    INSTAGRAM
+                </div>
+                <div>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="instagram-page">
+        <span>INSTAGRAM</span>
+
+        <div class="page-container">
+            <div class="instagram-row" id="instagramPost_" style="opacity: 0">
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="page-footer">
+    <div class="page-container">
+        <div class="page-top-footer">
+            <div class="footer-section">
+                <img src="/static/images/Logo_dream_finance_white.png">
+            </div>
+
+            <div class="footer-section">
+                <ul>
+                    <li><span class="zmdi zmdi-favorite-outline"></span> Services</li>
+                                                <li>
+                                <a href='/static/admin/images/docs/Working Capital Loan.pdf'
+                                   target="_blank">
+                                    <span class="zmdi zmdi-arrow-right"></span>
+                                    Working Capital Loan. Form
+                                </a>
+                            </li>
+                                                        <li>
+                                <a href='/static/admin/images/docs/Asset Finance Loan.pdf'
+                                   target="_blank">
+                                    <span class="zmdi zmdi-arrow-right"></span>
+                                    Asset Finance Loan Form
+                                </a>
+                            </li>
+                                                        <li>
+                                <a href='/static/admin/images/docs/.pdf'
+                                   target="_blank">
+                                    <span class="zmdi zmdi-arrow-right"></span>
+                                    Consumer Loan/Pay Roll Loans Form
+                                </a>
+                            </li>
+                                                        <li>
+                                <a href='/static/admin/images/docs/Group Loans.pdf'
+                                   target="_blank">
+                                    <span class="zmdi zmdi-arrow-right"></span>
+                                    Group Loans Form
+                                </a>
+                            </li>
+                                            </ul>
+            </div>
+
+            <div class="footer-section">
+                <ul>
+                    <li><span class="zmdi zmdi-my-location"></span> Contact Us</li>
+                    <li>Century City Mall,</li>
+                    <li>Lilongwe. </li>
+                    <li>Malawi<br/></li>
+                    <li><a href="mailto:info@dreamfinance.co.mw">info@dreamfinance.co.mw</a></li>
+                    <li>Phone : <a href="tel:2651779420">+265 177 9420</a></li>
+                    <li>Phone : <a href="tel:80009423">Toll-free number 80009423</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li><span class="fa fa-feed"></span> Follow Us</li>
+                </ul>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2Fdreamfinancemw&tabs=timeline&width=200&height=&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=false&appId=853888619315093"
+                        style="border:none;overflow:hidden;"
+                        scrolling="no" frameborder="0"
+                        allowfullscreen="true"
+                        width="1000px"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="small-footer">
+    <div class="page-container">
+        <div class="page-bottom-footer">
+
+            <div class="page-bottom-motto">
+                <p>Dream Financial Services Limited 2023. </p>
+                <p style="padding-left: 5px"> Designed By
+                    <a href="https://coolenterprisesmw.com"
+                       target="_blank"
+                       style="margin-left: 7px; color: #9ad8f1 !important">
+                        Cool Enterprises Limited
+                    </a>
+                </p>
+            </div>
+
+            <div class="page-bottom-motto-mobile">
+                <p>Dream Financial Limited 2023 .</p>
+                <p style="padding-left: 5px">Designed By<a href="https://coolenterprisesmw.com"
+                                 target="_blank"
+                                 style="margin-left: 7px; color: #9ad8f1 !important;">
+                        Cool Enterprises Limited
+                    </a>
+                </p>
+            </div>
+
+            <div class="page-bottom-social">
+                <div>
+                    <a href="https://web.facebook.com/dreamfinancemw" target="_blank">
+                        <span class="zmdi zmdi-facebook"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://twitter.com/dreamfinancemw" target="_blank">
+                        <span class="zmdi zmdi-twitter"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.instagram.com/dreamfinancemw" target="_blank">
+                        <span class="zmdi zmdi-instagram"></span>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://www.linkedin.com/company/dreamfinancemw" target="_blank">
+                        <span class="zmdi zmdi-linkedin"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ionicons/6.0.4/esm/ionicons.min.js" integrity="sha512-J4LkJr/AeK/KXjqkfb/65C4jzT4gG7BDqH9OtiOzCmULhWdKGppS3dCCzo0bmFULnZkajr4esopJYYLOLzuznw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script id="applicationScript" type="text/javascript" src="/static/js/application.js"></script>
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+
+<script>
+
+    $(window).on('load ready',function () {
+
+        $('html .eapps-link').css({
+            display:'none !important',
+            opacity:0,
+            visibility:'hidden !important'
+        });
+
+        setTimeout(()=>{
+            $('#instagramPost_').css({
+                opacity:1
+            });
+        },2000);
+
+    });
+
+    const dream = {
+        registerStatistics:()=>{
+            let formData = new FormData();
+            let j = {};
+            j.method = 'recordStatistics';
+            formData.append('data',JSON.stringify(j));
+            fetch('/static/admin/ajax.php',{
+                method : 'POST',
+                body  : formData
+            }).then((e)=>e.text()).then((results)=>{
+
+            });
+        }
+    }
+    dream.registerStatistics();
+
+    $(function () {
+        $('.search').click(function () {
+            $('.search-engine-container').css({
+                opacity:1,
+                visibility:'visible'
+            }).after(()=>{
+                $('.search-engine-input').css({
+                    opacity: 1,
+                    visibility: 'visible',
+                    transform: 'scale(1,1)'
+                });
+            });
+        });
+
+        $('.closeSearch').click(function () {
+            $('.search-engine-container').css({
+                opacity:0,
+                visibility:'hidden'
+            });
+            $('.search-engine-input').css({
+                opacity:0,
+                visibility:'hidden',
+                transform:'scale(.5,.5)'
+            });
+        });
+
+        $('.preloader').css({
+            visibility:'hidden',
+            opacity:0
+        }).after(()=>{
+            $('.page-main-container,.slowLoading').css({
+                opacity:1,
+                visibility:'visible'
+            });
+        });
+
+        $('.mobileMenu').click(function () {
+            $('.mobile-menu').css({
+                left:0,
+                opacity:1,
+                visibility:'visible'
+            });
+            $('.full-page-wrapper').css({
+                opacity:1,
+                visibility:'visible'
+            });
+        });
+
+        $('.mobileMenu li').click(function () {
+            $('.closeMobileMenu').click();
+        });
+
+        $('.closeMobileMenu').click(function () {
+            $('.mobile-menu').css({
+                left:'-80%',
+                opacity:0,
+                visibility:'hidden'
+            });
+            $('.full-page-wrapper').css({
+                opacity:0,
+                visibility:'hidden'
+            });
+        });
+
+        let height = $(window).innerHeight();
+        $('.landing-section,.landing-image-section,.landing-text-section').css({
+            height:height-40
+        });
+    });
+
+    jQuery(window).on("load resize", function () {
+        jQuery('iframe[src*="facebook.com"]').each(function () {
+            /* get width of parent element */
+            var width = Math.round(jQuery(this).parent().width());
+            var height = Math.round(jQuery(this).parent().height()-50);
+
+            if (width > 500) {
+                width = 500;
+            } else if (width < 180) {
+                width = 180;
+            }
+
+            /* replace width value in iframe src */
+            var src = new URL(jQuery(this).attr("src"));
+            src.searchParams.set("width", width);
+            src.searchParams.set("height", height);
+
+            /* append new width */
+            jQuery(this).attr("src", src);
+            jQuery(this).attr("width", width);
+            jQuery(this).attr("height", height);
+        });
+    });
+
+    let hasShown = false;
+    $(document).on('scroll',function () {
+        let length = $(document).scrollTop();
+        if (length > 140){
+            if (!hasShown){
+                $('.page-nav-wrapper').addClass('fixedNavBar');
+                setTimeout(function () {
+                    $('.page-nav-wrapper').addClass('showFixedNavBar');
+                },500);
+                hasShown = true;
+            }
+        }else{
+            if (hasShown){
+                $('.page-nav-wrapper').removeClass('fixedNavBar');
+                $('.page-nav-wrapper').removeClass('showFixedNavBar');
+                hasShown = false;
+            }
+
+        }
+    });
+
+</script></html>
